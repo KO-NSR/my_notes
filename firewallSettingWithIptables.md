@@ -1,4 +1,4 @@
-<span style="font-size:24px;">iptablesでファイアウォール設定</span>
+### iptablesでファイアウォール設定
 
 ```iptables``` ```Firewall``` ```Ubuntu```   
 <span style="color:gray">最終更新日 2025/06/16</span>

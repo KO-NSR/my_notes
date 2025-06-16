@@ -1,4 +1,4 @@
-<span style="font-size:24px;">Raspberry pi zero 2 w でベビーカメラを作る</span>
+### Raspberry pi zero 2 w でベビーカメラを作る
 ```RaspberryPiZero2W``` ```カメラ```   
 <span style="color:gray">最終更新日 2025/06/16</span>
 
@@ -74,13 +74,15 @@ $ ifconfig
 
 ## 5. カメラ設置
 今回は下の画像の様に、フレキシブルアームのスマホスタンド（100均です）を活用して取り付けてみました。   
-![test](./images/test.jpg)   
-
-実際の画像（夜中）※部屋は真っ暗です   
-![test](./images/test.jpg)   
+![test](./images/camera.jpg)   
 
 実際の画像（日中）      
-![test](./images/test.jpg)   
+![test](./images/dayMode.jpg)   
+
+実際の画像（夜中）※部屋は真っ暗です   
+![test](./images/nightMode.jpg)   
+布団が乱雑に置かれていることまで分かります...汗
+
 
 今回購入したカメラは、昼夜の自動切り替え機能がついているので、とても便利です。   
 赤外線LEDの光量は可変抵抗を回すだけで調整できますが、強くしすぎるとライト本体がかなり熱くなるので注意が必要です。   
