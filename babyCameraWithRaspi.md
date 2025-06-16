@@ -1,6 +1,6 @@
-### Raspberry pi zero 2 w でベビーカメラを作る
+<span style="font-size:24px;">Raspberry pi zero 2 w でベビーカメラを作る</span>
 ```RaspberryPiZero2W``` ```カメラ```   
-<span style="color:gray">最終更新日 2025/06/13</span>
+<span style="color:gray">最終更新日 2025/06/16</span>
 
 
 ## 1. はじめに
@@ -91,43 +91,8 @@ $ ifconfig
 このままではローカルネットワークに接続されている端末であれば、どの端末でもアクセスできてしまうので、ファイアウォールの設定を追加しようと思います。   
 設定ツールは**iptables**を使用します。   
 
-【現状の設定を確認】　　　
-```
-$ sudo iptables -L -v -n
-```
-
-【許可するIPアドレスを追加】   
-```
-$ sudo iptables -A INPUT -s 許可するIP -d 宛先IP -p tcp --dport 80 -j ACCEPT
-```
-
-【他の接続を拒否】   
-```
-$ sudo iptables -A INPUT -p tcp --dport 80 -j DROP
-```
-
-【設定の永続化】   
-```iptables-persistent```を使用します   
-```
-$ sudo apt-get install iptables-persistent
-$ netfilter-persistent save
-```
-これで再起動しても設定が消えません   
-
-【番号を含めて設定一覧を表示】
-```
-$ sudo iptables -L --line-numbers
-```
-
-【番号を指定してルールを削除】
-```
-$ sudo iptables -D INPUT 番号
-```
-
-
-参考サイト
-> https://qiita.com/ohtsuka-shota/items/7e168e7507d60ff6fd0f
-
+以下の記事を参考にしてください   
+[iptablesでファイアウォール設定](./firewallSettingWithIptables.md)
 
 
 ## 7. 今後の運用
