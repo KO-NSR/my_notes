@@ -13,8 +13,13 @@ $ sudo iptables -L -v -n
 ```
 
 【許可するIPアドレスを追加】   
+・新規で追加する場合   
 ```
-$ sudo iptables -A INPUT -s 許可するIP -d 宛先IP -p tcp --dport 80 -j ACCEPT
+$ sudo iptables -A INPUT -s <許可するIP> -d <宛先IP> -p tcp --dport 80 -j ACCEPT
+```
+・設定を任意の番号に挿入する場合
+```
+$ sudo iptables -I INPUT <挿入する位置> -s <許可するIP> -d <宛先IP> -p tcp --dport 80 -j ACCEPT
 ```
 
 【他の接続を拒否】   
@@ -26,7 +31,7 @@ $ sudo iptables -A INPUT -p tcp --dport 80 -j DROP
 ```iptables-persistent```を使用します   
 ```
 $ sudo apt-get install iptables-persistent
-$ netfilter-persistent save
+$ sudo netfilter-persistent save
 ```
 これで再起動しても設定が消えません   
 
@@ -37,8 +42,8 @@ $ sudo iptables -L --line-numbers
 
 【番号を指定してルールを削除】
 ```
-$ sudo iptables -D INPUT 番号
-```
+$ sudo iptables -D INPUT <番号>
+```   
 
 ## 参考サイト
 > https://qiita.com/ohtsuka-shota/items/7e168e7507d60ff6fd0f
